@@ -29,3 +29,11 @@ C:\Users\Dolores\Desktop\ConservatoireBanque\Banque V4 - Etudiants\obj\x86\Relea
 C:\Users\Dolores\Desktop\ConservatoireBanque\Banque V4 - Etudiants\obj\x86\Release\WindowsFormsApplication1.exe
 C:\Users\Dolores\Desktop\ConservatoireBanque\Banque V4 - Etudiants\obj\x86\Release\WindowsFormsApplication1.pdb
 C:\Users\Dolores\Desktop\ConservatoireBanque\Banque V4 - Etudiants\obj\x86\Release\Banque Graphique.csproj.AssemblyReference.cache
+C:\Users\Dolores\Documents\GestionConservatoire\Banque V4 - Etudiants\obj\x86\Release\Banque Graphique.csproj.AssemblyReference.cache
+C:\Users\Dolores\Documents\GestionConservatoire\Banque V4 - Etudiants\obj\x86\Release\Banque.Gestion.resources
+C:\Users\Dolores\Documents\GestionConservatoire\Banque V4 - Etudiants\obj\x86\Release\Banque.FormClient.resources
+C:\Users\Dolores\Documents\GestionConservatoire\Banque V4 - Etudiants\obj\x86\Release\Banque.Properties.Resources.resources
+C:\Users\Dolores\Documents\GestionConservatoire\Banque V4 - Etudiants\obj\x86\Release\Banque Graphique.csproj.GenerateResource.cache
+C:\Users\Dolores\Documents\GestionConservatoire\Banque V4 - Etudiants\obj\x86\Release\Banque Graphique.csproj.CoreCompileInputs.cache
+C:\Users\Dolores\Documents\GestionConservatoire\Banque V4 - Etudiants\obj\x86\Release\WindowsFormsApplication1.exe
+C:\Users\Dolores\Documents\GestionConservatoire\Banque V4 - Etudiants\obj\x86\Release\WindowsFormsApplication1.pdb

@@ -27,10 +27,10 @@ namespace Banque.DAL
 
 
 
-        public  List<Compte> getComptes(Personne cl)
+        public  List<Personne> getPersonne(Personne cl)
         {
 
-            List<Compte> lc = new List<Compte>();
+            List<Personne> lc = new List<>();
 
             try
             {
