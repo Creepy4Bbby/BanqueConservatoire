@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Gestion_conservatoire.Modele;
 using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
-using Gestion_conservatoire.Modele;
 
 namespace Gestion_conservatoire.DAL
 {
@@ -35,8 +32,8 @@ namespace Gestion_conservatoire.DAL
 
                 Ocom = maConnexionSql.reqExec("select p.id as idAdherent, p.nom as nomAdherent, p.prenom as prenomAdherent, " +
                     "p.tel as telAdherent, p.adresse as adresseAdherent, p.mail as mailAdherent, a.niveau as niveauAdherent  " +
-                    "from adherent as a " +
-                    "inner join personnes as p on a.id = p.id where id =" + unNumero);
+                    "from adherents as a " +
+                    "inner join personne as p on a.id = p.id where id =" + unNumero);
 
 
                 MySqlDataReader reader1 = Ocom.ExecuteReader();
@@ -86,14 +83,7 @@ namespace Gestion_conservatoire.DAL
 
 
                 // à compléter
-                maConnexionSql = ConnexionSql.getInstance(Fabrique.ProviderMysql, Fabrique.DataBaseMysql, Fabrique.UidMysql, Fabrique.MdpMysql);
 
-                maConnexionSql.openConnection();
-
-
-
-                Ocom = maConnexionSql.reqExec("Update personnes set adresse = '" + a.Adresse + "' where id = " + a.Id);
-                Ocom.ExecuteNonQuery();
 
 
             }
@@ -122,8 +112,8 @@ namespace Gestion_conservatoire.DAL
 
                 Ocom = maConnexionSql.reqExec("select p.id as idAdherent, p.nom as nomAdherent, p.prenom as prenomAdherent, " +
                     "p.tel as telAdherent, p.adresse as adresseAdherent, p.mail as mailAdherent, a.niveau as niveauAdherent  " +
-                    "from adherent as a " +
-                    "inner join personnes as p on a.id = p.id ");
+                    "from adherents as a " +
+                    "inner join personne as p on a.id = p.id ");
 
 
                 MySqlDataReader reader = Ocom.ExecuteReader();

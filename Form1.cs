@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Runtime.Serialization.Formatters.Binary;
-using Gestion_conservatoire.Controleur;
+﻿using Gestion_conservatoire.Controleur;
 using Gestion_conservatoire.Modele;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace Gestion_conservatoire
-    
+
 {
     [Serializable]
     public partial class Gestion : Form
@@ -54,10 +48,9 @@ namespace Gestion_conservatoire
         {
 
             cBox.DataSource = null;
-            // lBox.DataSource = lstcpt.Values.ToList();
-            cBox.DataSource = lstAd;
+            //cBox.DataSource = lstcpt.Values.ToList();
+            cBox.DataSource = lstAd.ToList();
             cBox.DisplayMember = "Description";
-           // cBox.SelectedItem(index, true);
 
         }
         private void rafraichirListBox(int index)

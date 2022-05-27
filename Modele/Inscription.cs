@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gestion_conservatoire.Modele
+﻿namespace Gestion_conservatoire.Modele
 {
     class Inscription
     {
@@ -20,7 +14,7 @@ namespace Gestion_conservatoire.Modele
             this.unCours = unCours;
             this.solde = solde;
         }
-        public Inscription(string nomAd, string prenomAd,string  dateCours,string nomProf,string prenomProf,int nombrePlace,string nomInstrument, int payer)
+        public Inscription(string nomAd, string prenomAd, string dateCours, string nomProf, string prenomProf, int nombrePlace, string nomInstrument, int payer)
         {
             this.nomAd = nomAd;
             this.prenomAd = prenomAd;
@@ -31,14 +25,14 @@ namespace Gestion_conservatoire.Modele
             this.nomInstrument = nomInstrument;
             this.payer = payer;
         }
-       
+
         public Adherent UnAdherent { get => unAdherent; }
         public Cours UnCours { get => unCours; }
         public int Solde { get => solde; }
 
         public string Description
         {
-            get => this.nomAd + " " + this.prenomAd + " " + this.dateCours + " "+ this.nomProf + " " + this.prenomProf + " " + this.nombrePlace + " " + this.nomInstrument + " " + this.payer;
+            get => this.nomAd + " " + this.prenomAd + " " + this.dateCours + " " + this.nomProf + " " + this.prenomProf + " " + this.nombrePlace + " " + this.nomInstrument + " " + this.payer;
         }
     }
 }

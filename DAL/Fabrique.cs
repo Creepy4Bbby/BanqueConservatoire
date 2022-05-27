@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gestion_conservatoire.DAL
+﻿namespace Gestion_conservatoire.DAL
 {
     class Fabrique
     {
         private static string providerMysql = "localhost";
 
-        private static string dataBaseMysql = "conservatoire";
+        private static string dataBaseMysql = "projetmusic";
 
         private static string uidMysql = "root";
 

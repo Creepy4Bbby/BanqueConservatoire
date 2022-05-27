@@ -46,3 +46,23 @@ C:\Users\fandr\Documents\BTS SIO\2ème année\BTS-Projet-E5\Gestion_conservatoir
 C:\Users\fandr\Documents\BTS SIO\2ème année\BTS-Projet-E5\Gestion_conservatoire\obj\Debug\Gestion_conservatoire.csproj.CopyComplete
 C:\Users\fandr\Documents\BTS SIO\2ème année\BTS-Projet-E5\Gestion_conservatoire\obj\Debug\Gestion_conservatoire.exe
 C:\Users\fandr\Documents\BTS SIO\2ème année\BTS-Projet-E5\Gestion_conservatoire\obj\Debug\Gestion_conservatoire.pdb
+C:\Users\Dolores\Documents\GestionConservatoire\bin\Debug\Gestion_conservatoire.exe.config
+C:\Users\Dolores\Documents\GestionConservatoire\bin\Debug\Gestion_conservatoire.exe
+C:\Users\Dolores\Documents\GestionConservatoire\bin\Debug\Gestion_conservatoire.pdb
+C:\Users\Dolores\Documents\GestionConservatoire\bin\Debug\ZstdNet.dll
+C:\Users\Dolores\Documents\GestionConservatoire\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Dolores\Documents\GestionConservatoire\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Dolores\Documents\GestionConservatoire\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\Dolores\Documents\GestionConservatoire\bin\Debug\System.Memory.dll
+C:\Users\Dolores\Documents\GestionConservatoire\bin\Debug\System.Buffers.dll
+C:\Users\Dolores\Documents\GestionConservatoire\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\Dolores\Documents\GestionConservatoire\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\Dolores\Documents\GestionConservatoire\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Dolores\Documents\GestionConservatoire\obj\Debug\Gestion_conservatoire.exe.config
+C:\Users\Dolores\Documents\GestionConservatoire\obj\Debug\Gestion_conservatoire.Gestion.resources
+C:\Users\Dolores\Documents\GestionConservatoire\obj\Debug\Gestion_conservatoire.Properties.Resources.resources
+C:\Users\Dolores\Documents\GestionConservatoire\obj\Debug\Gestion_conservatoire.csproj.GenerateResource.cache
+C:\Users\Dolores\Documents\GestionConservatoire\obj\Debug\Gestion_conservatoire.csproj.CoreCompileInputs.cache
+C:\Users\Dolores\Documents\GestionConservatoire\obj\Debug\Gestion_conservatoire.csproj.CopyComplete
+C:\Users\Dolores\Documents\GestionConservatoire\obj\Debug\Gestion_conservatoire.exe
+C:\Users\Dolores\Documents\GestionConservatoire\obj\Debug\Gestion_conservatoire.pdb
