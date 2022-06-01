@@ -1,14 +1,17 @@
-﻿using Gestion_conservatoire.Modele;
-using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using Gestion_conservatoire.Modele;
 
 namespace Gestion_conservatoire.DAL
 {
     class InscriptionDao
     {
         private ConnexionSql maConnexionsql;
-        private MySqlCommand Ocom1;
+        private MySqlCommand Ocom;
 
 
         public List<Inscription> getInscriptions(Adherent ad)
@@ -16,13 +19,12 @@ namespace Gestion_conservatoire.DAL
             List<Inscription> listInscription = new List<Inscription>();
             try
             {
-                Inscription unInscription;
 
                 maConnexionsql = ConnexionSql.getInstance(Fabrique.ProviderMysql, Fabrique.DataBaseMysql, Fabrique.UidMysql, Fabrique.MdpMysql);
 
                 maConnexionsql.openConnection();
                 //Selection les inscription
-                Ocom1 = maConnexionsql.reqExec("select pers.nom as nomAd, pers.prenom as prenomAd, c.jourheure as dateCours," +
+                Ocom = maConnexionsql.reqExec("select pers.nom as nomAd, pers.prenom as prenomAd, c.jourheure as dateCours, " +
                     "pers1.nom as nomProf, pers1.prenom as prenomProf, c.nbPlace as nPlace, i.nom as nomInstrument, insc.paye as solde " +
                     "from inscription as insc inner join adherents as a on a.id = insc.idAdherent " +
                     "inner join cours as c on c.id = insc.idCours " +
@@ -32,8 +34,8 @@ namespace Gestion_conservatoire.DAL
                     "inner join instrument as i on i.id = c.idInstrument " +
                     "where idAdherent = " + ad.Num);
 
-                MySqlDataReader reader1 = Ocom1.ExecuteReader();
-
+                MySqlDataReader reader1 = Ocom.ExecuteReader();
+                Inscription unInscription;
 
                 while (reader1.Read())
                 {
@@ -55,8 +57,6 @@ namespace Gestion_conservatoire.DAL
                 reader1.Close();
                 maConnexionsql.closeConnection();
 
-                return listInscription;
-
             }
             catch (Exception emp)
             {
@@ -64,8 +64,8 @@ namespace Gestion_conservatoire.DAL
                 throw (emp);
 
             }
+            return listInscription;
 
-           
 
         }
 

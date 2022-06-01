@@ -1,5 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace Gestion_conservatoire.DAL
 {
@@ -47,36 +50,25 @@ namespace Gestion_conservatoire.DAL
          */
         public static ConnexionSql getInstance(string unProvider, string uneDataBase, string unUid, string unMdp)
         {
-
-            //       lock ((mylock))
-            //    {
+          lock ((mylock))
+           {
 
             try
             {
-
-
-                //if (null == connection)
-                //{ // Premier appel
-                //    connection = new ConnexionSql(unProvider, uneDataBase, unUid, unMdp);
-
-
+               /** if (null == connection)
+                { // Premier appel*/
+                    connection = new ConnexionSql(unProvider, uneDataBase, unUid, unMdp);
                 //}
 
             }
             catch (Exception emp)
             {
                 throw (emp);
-
-
             }
             return connection;
 
-            //  }
+          }
         }
-
-
-
-
 
         /**
          * Ouverture de la connexion

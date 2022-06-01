@@ -8,12 +8,7 @@
         private string nomAd, prenomAd, dateCours, nomProf, prenomProf, nomInstrument;
         private int payer, nombrePlace;
 
-        public Inscription(Adherent unAdherent, Cours unCours, int solde)
-        {
-            this.unAdherent = unAdherent;
-            this.unCours = unCours;
-            this.solde = solde;
-        }
+ 
         public Inscription(string nomAd, string prenomAd, string dateCours, string nomProf, string prenomProf, int nombrePlace, string nomInstrument, int payer)
         {
             this.nomAd = nomAd;

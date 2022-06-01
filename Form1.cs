@@ -29,11 +29,11 @@ namespace Gestion_conservatoire
             {
                 Adherent ad = (Adherent)lstAd[i];
 
-                lstIns = monManager.chargemenInBD(ad);
+               lstIns = monManager.chargemenInBD(ad);
 
                 if (lstIns.Count != 0) { rafraichirListBox(0); }
 
-                else { rafraichirListBox_Comptes_Vides(); }
+//                else { rafraichirListBox_Comptes_Vides(); }
 
             }
 

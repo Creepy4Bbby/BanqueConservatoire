@@ -66,3 +66,4 @@ C:\Users\Dolores\Documents\GestionConservatoire\obj\Debug\Gestion_conservatoire.
 C:\Users\Dolores\Documents\GestionConservatoire\obj\Debug\Gestion_conservatoire.csproj.CopyComplete
 C:\Users\Dolores\Documents\GestionConservatoire\obj\Debug\Gestion_conservatoire.exe
 C:\Users\Dolores\Documents\GestionConservatoire\obj\Debug\Gestion_conservatoire.pdb
+C:\Users\Dolores\Documents\GestionConservatoire\obj\Debug\Gestion_conservatoire.csproj.AssemblyReference.cache
