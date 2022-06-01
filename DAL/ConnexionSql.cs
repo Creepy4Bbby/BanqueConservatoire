@@ -55,12 +55,12 @@ namespace Gestion_conservatoire.DAL
             {
 
 
-                if (null == connection)
-                { // Premier appel
-                    connection = new ConnexionSql(unProvider, uneDataBase, unUid, unMdp);
+                //if (null == connection)
+                //{ // Premier appel
+                //    connection = new ConnexionSql(unProvider, uneDataBase, unUid, unMdp);
 
 
-                }
+                //}
 
             }
             catch (Exception emp)
