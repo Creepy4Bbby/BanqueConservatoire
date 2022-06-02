@@ -31,15 +31,17 @@ namespace Gestion_conservatoire
         {
             this.lBox = new System.Windows.Forms.ListBox();
             this.cBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lBox
             // 
             this.lBox.FormattingEnabled = true;
-            this.lBox.ItemHeight = 20;
-            this.lBox.Location = new System.Drawing.Point(659, 42);
+            this.lBox.ItemHeight = 16;
+            this.lBox.Location = new System.Drawing.Point(586, 34);
+            this.lBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lBox.Name = "lBox";
-            this.lBox.Size = new System.Drawing.Size(550, 264);
+            this.lBox.Size = new System.Drawing.Size(470, 388);
             this.lBox.TabIndex = 0;
             this.lBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -47,23 +49,37 @@ namespace Gestion_conservatoire
             // 
             this.cBox.Font = new System.Drawing.Font("Bookman Old Style", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cBox.FormattingEnabled = true;
-            this.cBox.Location = new System.Drawing.Point(12, 42);
+            this.cBox.Location = new System.Drawing.Point(12, 47);
+            this.cBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cBox.Name = "cBox";
-            this.cBox.Size = new System.Drawing.Size(619, 26);
+            this.cBox.Size = new System.Drawing.Size(551, 25);
             this.cBox.TabIndex = 1;
             this.cBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 17);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Adhérents";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Gestion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1221, 584);
+            this.ClientSize = new System.Drawing.Size(1085, 467);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cBox);
             this.Controls.Add(this.lBox);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Gestion";
-            this.Text = "Gestion conservatoire Zik-Mu";
+            this.Text = "wam";
             this.Load += new System.EventHandler(this.Gestion_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -71,6 +87,7 @@ namespace Gestion_conservatoire
 
         private System.Windows.Forms.ListBox lBox;
         private System.Windows.Forms.ComboBox cBox;
+        private System.Windows.Forms.Label label1;
     }
 }
 

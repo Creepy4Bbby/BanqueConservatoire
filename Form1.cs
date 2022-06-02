@@ -21,6 +21,7 @@ namespace Gestion_conservatoire
             monManager = new Mgr();
         }
 
+        //Affichage adherents
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int i = cBox.SelectedIndex;
@@ -71,6 +72,11 @@ namespace Gestion_conservatoire
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
