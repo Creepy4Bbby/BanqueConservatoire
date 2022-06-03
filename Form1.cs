@@ -1,12 +1,18 @@
-﻿using Gestion_conservatoire.Controleur;
-using Gestion_conservatoire.Modele;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.Serialization.Formatters.Binary;
+using Gestion_conservatoire.Controleur;
+using Gestion_conservatoire.Modele;
 
 namespace Gestion_conservatoire
-
+    
 {
     [Serializable]
     public partial class Gestion : Form
@@ -21,7 +27,7 @@ namespace Gestion_conservatoire
             monManager = new Mgr();
         }
 
-        //Affichage adherents
+        //Affiche les adhérents
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int i = cBox.SelectedIndex;
@@ -30,15 +36,17 @@ namespace Gestion_conservatoire
             {
                 Adherent ad = (Adherent)lstAd[i];
 
-               lstIns = monManager.chargemenInBD(ad);
+                lstIns = monManager.chargemenInBD(ad);
 
                 if (lstIns.Count != 0) { rafraichirListBox(0); }
 
-//                else { rafraichirListBox_Comptes_Vides(); }
+                else { rafraichirListBox_Comptes_Vides(); }
 
             }
 
         }
+
+
         private void rafraichirListBox_Comptes_Vides()
         {
 
@@ -49,9 +57,10 @@ namespace Gestion_conservatoire
         {
 
             cBox.DataSource = null;
-            //cBox.DataSource = lstcpt.Values.ToList();
-            cBox.DataSource = lstAd.ToList();
+            // lBox.DataSource = lstcpt.Values.ToList();
+            cBox.DataSource = lstAd;
             cBox.DisplayMember = "Description";
+           // cBox.SelectedItem(index, true);
 
         }
         private void rafraichirListBox(int index)
@@ -76,7 +85,66 @@ namespace Gestion_conservatoire
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void modifierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int i = cBox.SelectedIndex;
+            Adherent a = (Adherent)lstAd[i];
+
+            FormAdherent fa = new FormAdherent(a);
+
+            fa.ShowDialog();
+
+            monManager.updateAdherent(a);
+
+            lstAd = monManager.chargementAdBD();
+
+            rafraichirComboBox(i);
+        }
+
+        private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnSupp.Visible = true;
+            btnCrediter.Visible = false;
+            textBox1.Visible = false;
+
+        }
+
+        private void btnSupp_Click(object sender, EventArgs e)
+        {
+            int i = cBox.SelectedIndex;
+            Adherent ad = (Adherent)lstAd[i];
+            try
+            {
+                monManager.deleteAdherent(ad);
+
+                lstAd = monManager.chargementAdBD();
+
+                rafraichirComboBox(i);
+            }
+            catch(Exception emp)
+            {
+                MessageBox.Show("Impossible il y a déjà une inscription");
+            }
+            
+
+
+
+        }
+
+        private void btnCrediter_Click(object sender, EventArgs e)
+        {
+           
+      
+        }
+
+            private void crediterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnCrediter.Visible = true;
+            textBox1.Visible = true;
+            btnSupp.Visible = false;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

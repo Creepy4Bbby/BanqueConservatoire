@@ -1,4 +1,10 @@
-﻿namespace Gestion_conservatoire.Modele
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Gestion_conservatoire.Modele
 {
     public abstract class Personne
     {
@@ -9,14 +15,14 @@
         protected string mail;
         protected string tel;
 
-        public Personne(int id, string nom, string prenom, string ad, string mail, string tel)
+        public Personne(int id, string nom, string prenom, string mail, string tel, string ad)
         {
             this.id = id;
             this.nom = nom;
             this.prenom = prenom;
-            this.adresse = ad;
             this.mail = mail;
             this.tel = tel;
+            this.adresse = ad;
         }
 
         public Personne()
@@ -35,7 +41,7 @@
         public virtual string Description
         {
 
-            get => this.id + "- " + this.nom + " " + this.prenom + " " + this.Adresse + " " + this.mail + " " + this.tel;
+            get => this.id + "- " + this.nom + " " + this.prenom + " " + this.mail + " " + this.tel + " " + this.adresse;
         }
 
 

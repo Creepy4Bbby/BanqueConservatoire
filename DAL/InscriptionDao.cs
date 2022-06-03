@@ -23,8 +23,8 @@ namespace Gestion_conservatoire.DAL
                 maConnexionsql = ConnexionSql.getInstance(Fabrique.ProviderMysql, Fabrique.DataBaseMysql, Fabrique.UidMysql, Fabrique.MdpMysql);
 
                 maConnexionsql.openConnection();
-                //Selection les inscription
-                Ocom = maConnexionsql.reqExec("select pers.nom as nomAd, pers.prenom as prenomAd, c.jourheure as dateCours, " +
+
+                Ocom = maConnexionsql.reqExec("Select pers.nom as nomAd, pers.prenom as prenomAd, c.jourHeure as dateCours," +
                     "pers1.nom as nomProf, pers1.prenom as prenomProf, c.nbPlace as nPlace, i.nom as nomInstrument, insc.paye as solde " +
                     "from inscription as insc inner join adherents as a on a.id = insc.idAdherent " +
                     "inner join cours as c on c.id = insc.idCours " +
@@ -50,7 +50,7 @@ namespace Gestion_conservatoire.DAL
                     int solde = (int)reader1.GetValue(7);
 
                     unInscription = new Inscription(nomAd, prenomAd, dateCours, nomProf, prenomProf, nombrePlace, nomInstrument, solde);
-                    listInscription.Add(unInscription);
+                    listInscription.Add(unInscription);                    
 
                 }
 
@@ -58,15 +58,13 @@ namespace Gestion_conservatoire.DAL
                 maConnexionsql.closeConnection();
 
             }
-            catch (Exception emp)
+            catch(Exception emp)
             {
 
                 throw (emp);
 
             }
             return listInscription;
-
-
         }
 
     }

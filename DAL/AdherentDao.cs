@@ -1,8 +1,11 @@
-﻿using Gestion_conservatoire.Modele;
-using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using Gestion_conservatoire.Modele;
 
 namespace Gestion_conservatoire.DAL
 {
@@ -51,7 +54,7 @@ namespace Gestion_conservatoire.DAL
                     int niveau = (int)reader1.GetValue(6);
 
 
-                    ad = new Adherent(id, nom, prenom, adresse, mail, tel, niveau);
+                    ad = new Adherent(id, nom, prenom, mail, tel, adresse, niveau);
 
 
                 }
@@ -83,8 +86,41 @@ namespace Gestion_conservatoire.DAL
 
 
                 // à compléter
+                maConnexionSql = ConnexionSql.getInstance(Fabrique.ProviderMysql, Fabrique.DataBaseMysql, Fabrique.UidMysql, Fabrique.MdpMysql);
+
+                maConnexionSql.openConnection();
 
 
+
+                Ocom = maConnexionSql.reqExec("Update personne set tel ='" + a.Tel + "', adresse = '" + a.Adresse + "' where id = " + a.Id);
+                Ocom.ExecuteNonQuery();
+
+                Ocom = maConnexionSql.reqExec("Update adherents set niveau ='" + a.Niveau + "' where id = " + a.Id);
+                Ocom.ExecuteNonQuery();
+
+
+            }
+
+            catch (Exception emp)
+            {
+
+                throw (emp);
+            }
+        }
+
+        public void deleteAdherent(Adherent a)
+        {
+
+            try
+            {
+
+                // à compléter
+                maConnexionSql = ConnexionSql.getInstance(Fabrique.ProviderMysql, Fabrique.DataBaseMysql, Fabrique.UidMysql, Fabrique.MdpMysql);
+
+                maConnexionSql.openConnection();
+
+                Ocom = maConnexionSql.reqExec("Delete from adherents where id = " + a.Id);
+                Ocom.ExecuteNonQuery();
 
             }
 
@@ -134,7 +170,7 @@ namespace Gestion_conservatoire.DAL
                     string mail = (string)reader.GetValue(5);
                     int niveau = (int)reader.GetValue(6);
 
-                    a = new Adherent(numero, nom, prenom, tel, adresse, mail, niveau);
+                    a = new Adherent(numero, nom, prenom, mail, tel, adresse, niveau);
 
                     lc.Add(a);
 
