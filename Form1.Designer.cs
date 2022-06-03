@@ -39,7 +39,7 @@ namespace Gestion_conservatoire
             this.btnSupp = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textCrediter = new System.Windows.Forms.TextBox();
             this.btnCrediter = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -137,14 +137,14 @@ namespace Gestion_conservatoire
             this.label1.TabIndex = 5;
             this.label1.Text = "Etat";
             // 
-            // textBox1
+            // textCrediter
             // 
-            this.textBox1.Location = new System.Drawing.Point(304, 224);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(190, 22);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.Visible = false;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textCrediter.Location = new System.Drawing.Point(304, 224);
+            this.textCrediter.Name = "textCrediter";
+            this.textCrediter.Size = new System.Drawing.Size(190, 22);
+            this.textCrediter.TabIndex = 6;
+            this.textCrediter.Visible = false;
+            this.textCrediter.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnCrediter
             // 
@@ -164,7 +164,7 @@ namespace Gestion_conservatoire
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1085, 467);
             this.Controls.Add(this.btnCrediter);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textCrediter);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnSupp);
@@ -194,7 +194,7 @@ namespace Gestion_conservatoire
         private System.Windows.Forms.Button btnSupp;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textCrediter;
         private System.Windows.Forms.Button btnCrediter;
         private System.Windows.Forms.ToolStripMenuItem crediterToolStripMenuItem;
     }

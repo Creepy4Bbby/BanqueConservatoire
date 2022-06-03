@@ -105,7 +105,7 @@ namespace Gestion_conservatoire
         {
             btnSupp.Visible = true;
             btnCrediter.Visible = false;
-            textBox1.Visible = false;
+            textCrediter.Visible = false;
 
         }
 
@@ -133,14 +133,25 @@ namespace Gestion_conservatoire
 
         private void btnCrediter_Click(object sender, EventArgs e)
         {
+
+            int i = lBox.SelectedIndex;
+
+            //Inscription selectionnée
+            Inscription  uneIns= lstIns[i];
+
+            uneIns.Solde = Convert.ToInt32(textCrediter.Text);
+
+            monManager.updateSolde(uneIns);
+
            
-      
-        }
+            
+                 
+            }
 
             private void crediterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             btnCrediter.Visible = true;
-            textBox1.Visible = true;
+            textCrediter.Visible = true;
             btnSupp.Visible = false;
         }
 

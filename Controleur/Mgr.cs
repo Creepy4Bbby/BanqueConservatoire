@@ -24,7 +24,7 @@ namespace Gestion_conservatoire.Controleur
         public void updateAdherent(Adherent ad)
         {
             a.updateAdherent(ad);
-
+           
         }
         public void updateSolde(Inscription ins)
         {
