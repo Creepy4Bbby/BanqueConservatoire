@@ -26,11 +26,11 @@ namespace Gestion_conservatoire.Controleur
             a.updateAdherent(ad);
            
         }
-        public void updateSolde(Inscription ins)
-        {
-            c.updateSolde(ins);
+        //public void updateSolde(Inscription ins)
+        //{
+        //    c.updateSolde(ins);
 
-        }
+        //}
         public void deleteAdherent(Adherent ad)
         {
             try

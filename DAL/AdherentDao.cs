@@ -33,10 +33,8 @@ namespace Gestion_conservatoire.DAL
                 maConnexionSql.openConnection();
 
 
-                Ocom = maConnexionSql.reqExec("select p.id as idAdherent, p.nom as nomAdherent, p.prenom as prenomAdherent, " +
-                    "p.tel as telAdherent, p.adresse as adresseAdherent, p.mail as mailAdherent, a.niveau as niveauAdherent  " +
-                    "from adherents as a " +
-                    "inner join personne as p on a.id = p.id where id =" + unNumero);
+                Ocom = maConnexionSql.reqExec("select personne.id idP,personne.nom nomP,personne.prenom prenomP, personne.tel telP,personne.adresse adresseP,personne.mail mailP from personne inner join adherents on adherents.id = personne.id ");
+                    
 
 
                 MySqlDataReader reader1 = Ocom.ExecuteReader();
@@ -51,11 +49,11 @@ namespace Gestion_conservatoire.DAL
                     string tel = (string)reader1.GetValue(3);
                     string adresse = (string)reader1.GetValue(4);
                     string mail = (string)reader1.GetValue(5);
-                    int niveau = (int)reader1.GetValue(6);
+                    //int niveau = (int)reader1.GetValue(6);
 
 
-                    ad = new Adherent(id, nom, prenom, mail, tel, adresse, niveau);
-
+                    ad = new Adherent(id, nom, prenom, mail, tel, adresse);
+                    //ad = new Adherent(id, nom, prenom, mail, tel, adresse, niveau);
 
                 }
 
@@ -95,8 +93,8 @@ namespace Gestion_conservatoire.DAL
                 Ocom = maConnexionSql.reqExec("Update personne set tel ='" + a.Tel + "', adresse = '" + a.Adresse + "' where id = " + a.Id);
                 Ocom.ExecuteNonQuery();
 
-                Ocom = maConnexionSql.reqExec("Update adherents set niveau ='" + a.Niveau + "' where id = " + a.Id);
-                Ocom.ExecuteNonQuery();
+                //Ocom = maConnexionSql.reqExec("Update adherents set niveau ='" + a.Niveau + "' where id = " + a.Id);
+                //Ocom.ExecuteNonQuery();
 
 
             }
@@ -146,10 +144,8 @@ namespace Gestion_conservatoire.DAL
                 maConnexionSql.openConnection();
 
 
-                Ocom = maConnexionSql.reqExec("select p.id as idAdherent, p.nom as nomAdherent, p.prenom as prenomAdherent, " +
-                    "p.tel as telAdherent, p.adresse as adresseAdherent, p.mail as mailAdherent, a.niveau as niveauAdherent  " +
-                    "from adherents as a " +
-                    "inner join personne as p on a.id = p.id ");
+                Ocom = maConnexionSql.reqExec("select personne.id idP, personne.nom nomP, personne.prenom prenomP, personne.tel telP, personne.adresse adresseP, personne.mail mailP from personne inner join adherents on adherents.id = personne.id ");
+                    
 
 
                 MySqlDataReader reader = Ocom.ExecuteReader();
@@ -168,9 +164,9 @@ namespace Gestion_conservatoire.DAL
                     string tel = (string)reader.GetValue(3);
                     string adresse = (string)reader.GetValue(4);
                     string mail = (string)reader.GetValue(5);
-                    int niveau = (int)reader.GetValue(6);
+                    //int niveau = (int)reader.GetValue(6);
 
-                    a = new Adherent(numero, nom, prenom, mail, tel, adresse, niveau);
+                    a = new Adherent(numero, nom, prenom, mail, tel, adresse);
 
                     lc.Add(a);
 

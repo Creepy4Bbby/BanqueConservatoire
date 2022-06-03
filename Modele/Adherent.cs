@@ -10,9 +10,11 @@ namespace Gestion_conservatoire.Modele
     {
         int niveau;
 
-        public Adherent(int id, string nom, string prenom, string mail, string tel, string ad, int niveau) : base(id, nom, prenom, mail, tel, ad)
+        public Adherent(int id, string nom, string prenom, string mail, string tel, string ad) : base(id, nom, prenom, mail, tel, ad)
+
+      //public Adherent(int id, string nom, string prenom, string mail, string tel, string ad, int niveau)
         {
-            this.niveau = niveau;
+            //this.niveau = niveau;
         }
         public Adherent()
         {
@@ -24,7 +26,7 @@ namespace Gestion_conservatoire.Modele
 
         public override string Description
         {
-            get => base.Description + " Niveau: " + this.niveau;
+            get => base.Description;/*+ " Niveau: " + this.niveau;*/
         }
     }
 }

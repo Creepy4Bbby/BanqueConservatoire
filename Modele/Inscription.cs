@@ -20,26 +20,15 @@ namespace Gestion_conservatoire.Modele
             this.unCours = unCours;
             this.Solde = solde;
         }
-        public Inscription(string nomAd, string prenomAd,string  dateCours,string nomProf,string prenomProf,int nombrePlace,string nomInstrument, int payer)
-        {
-            this.nomAd = nomAd;
-            this.prenomAd = prenomAd;
-            this.dateCours = dateCours;
-            this.nomProf = nomProf;
-            this.prenomProf = prenomProf;
-            this.nombrePlace = nombrePlace;
-            this.nomInstrument = nomInstrument;
-            this.payer = payer;
-        }
-       
         public Adherent UnAdherent { get => unAdherent; }
         public Cours UnCours { get => unCours; }
-       
-
-        public string Description
-        {
-            get => this.nomAd + " " + this.prenomAd + " " + this.dateCours + " "+ this.nomProf + " " + this.prenomProf + " " + this.nombrePlace + " " + this.nomInstrument + " " + this.payer;
-        }
         public int Solde { get => solde; set => solde = value; }
+
+        public override string ToString()
+        {
+            return (unCours.UnIntrument.NomInstru + " | " + unCours.Date + " | " + Solde);
+        }
+        
+        
     }
 }

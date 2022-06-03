@@ -20,6 +20,7 @@ namespace Gestion_conservatoire
         Mgr monManager;
 
         private List<Adherent> lstAd = new List<Adherent>();
+        Adherent Adherent_selected = new Adherent();
         private List<Inscription> lstIns = new List<Inscription>();
         public Gestion()
         {
@@ -27,10 +28,20 @@ namespace Gestion_conservatoire
             monManager = new Mgr();
         }
 
+        private void Gestion_Load(object sender, EventArgs e)
+        {
+            lstAd = monManager.chargementAdBD();
+            rafraichirComboBox(0);
+        }
+
         //Affiche les adhérents
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        { 
+            btnSupp.Visible = false;
+
             int i = cBox.SelectedIndex;
+
+            MessageBox.Show(" i : " + i);
 
             if (i != -1)
             {
@@ -40,19 +51,22 @@ namespace Gestion_conservatoire
 
                 if (lstIns.Count != 0) { rafraichirListBox(0); }
 
-                else { rafraichirListBox_Comptes_Vides(); }
+                else
+                {
+                    rafraichirListBox_Comptes_Vides();
+
+                }
 
             }
-
         }
-
-
-        private void rafraichirListBox_Comptes_Vides()
+        private void rafraichirListBox(int index)
         {
 
             lBox.DataSource = null;
+            lBox.DataSource = lstIns;
             lBox.DisplayMember = "Description";
         }
+
         private void rafraichirComboBox(int index)
         {
 
@@ -63,22 +77,14 @@ namespace Gestion_conservatoire
            // cBox.SelectedItem(index, true);
 
         }
-        private void rafraichirListBox(int index)
-        {
 
+
+            private void rafraichirListBox_Comptes_Vides()
+        {
             lBox.DataSource = null;
-            lBox.DataSource = lstIns;
             lBox.DisplayMember = "Description";
-            lBox.SetSelected(index, true);
-
         }
 
-        private void Gestion_Load(object sender, EventArgs e)
-        {
-            lstAd = monManager.chargementAdBD();
-
-            if (lstAd.Count != 0) { rafraichirComboBox(0); }
-        }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -139,9 +145,11 @@ namespace Gestion_conservatoire
             //Inscription selectionnée
             Inscription  uneIns= lstIns[i];
 
+            //Recupere le solde et transforme en int 
             uneIns.Solde = Convert.ToInt32(textCrediter.Text);
 
-            monManager.updateSolde(uneIns);
+            ////J'apelle ma fonction
+            //monManager.updateSolde(uneIns);
 
            
             
