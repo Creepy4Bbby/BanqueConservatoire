@@ -20,6 +20,8 @@ namespace Gestion_conservatoire.Modele
             this.unCours = unCours;
             this.Solde = solde;
         }
+
+        //methode 
         public Adherent UnAdherent { get => unAdherent; }
         public Cours UnCours { get => unCours; }
         public int Solde { get => solde; set => solde = value; }
@@ -29,6 +31,10 @@ namespace Gestion_conservatoire.Modele
             return (unCours.UnIntrument.NomInstru + " | " + unCours.Date + " | " + Solde);
         }
         
+        public void Crediter (int montant)
+        {
+            solde = montant + solde;
+        }
         
     }
 }

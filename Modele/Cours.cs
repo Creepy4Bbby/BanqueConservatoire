@@ -27,6 +27,8 @@ namespace Gestion_conservatoire.Modele
         public Adherent UnAdherent { get => UnAdherent; }
 
         public Instrument UnIntrument { get => unInstrument; }
+
+        //Methode qui appel l'id de cour
         public int Id { get => id; }
 
         public string Description

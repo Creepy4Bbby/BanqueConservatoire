@@ -146,15 +146,22 @@ namespace Gestion_conservatoire
             Inscription  uneIns= lstIns[i];
 
             //Recupere le solde et transforme en int 
-            uneIns.Solde = Convert.ToInt32(textCrediter.Text);
-
-            ////J'apelle ma fonction
-            //monManager.updateSolde(uneIns);
-
-           
+            uneIns.Crediter(Convert.ToInt32(textCrediter.Text));
             
-                 
+            ////J'apelle ma fonction
+            monManager.updateSolde(uneIns);
+
+            int j = cBox.SelectedIndex;
+            if (j != -1)
+            {
+                Adherent ad = (Adherent)lstAd[j];
+
+                lstIns = monManager.chargemenInBD(ad);
+
+
             }
+
+        }
 
             private void crediterToolStripMenuItem_Click(object sender, EventArgs e)
         {

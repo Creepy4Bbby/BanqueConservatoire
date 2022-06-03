@@ -20,6 +20,8 @@ namespace Gestion_conservatoire.Modele
         {
 
         }
+
+        //methode appeler quand tu initiale un objet
         public int Num { get => id; }
 
         public int Niveau { get => niveau; set => niveau = value; }

@@ -52,6 +52,7 @@ namespace Gestion_conservatoire.DAL
 
                 }
 
+
                 reader1.Close();
                 maConnexionsql.closeConnection();
 
@@ -63,7 +64,33 @@ namespace Gestion_conservatoire.DAL
 
             }
             return listInscription;
+        
+        
         }
+
+
+      public void updateSolde(Inscription unInst)
+
+        {
+            try
+            {
+                maConnexionsql = ConnexionSql.getInstance(Fabrique.ProviderMysql, Fabrique.DataBaseMysql, Fabrique.UidMysql, Fabrique.MdpMysql);
+
+                maConnexionsql.openConnection();
+
+                Ocom = maConnexionsql.reqExec("update inscription set paye = " + unInst.Solde + "where idAdherent = " + unInst.UnAdherent.Num + "and idCours =" + unInst.UnCours.Id);
+                    }
+            catch(Exception brout)
+            {
+                throw (brout);
+            }
+
+            }
+
+
+
+
+
 
 
 
