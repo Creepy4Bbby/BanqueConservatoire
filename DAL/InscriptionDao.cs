@@ -42,13 +42,13 @@ namespace Gestion_conservatoire.DAL
                     int solde = (int)reader1.GetValue(7);
 
                     Instrument unInstrument = new Instrument(idInstrument, nomInstrument);
-                  
 
-                    Cours unCours = new Cours(courid,jourheure,unInstrument);
-                    
 
-                    Inscription unInscription = new Inscription(ad,unCours,solde);
-                    listInscription.Add(unInscription);                  
+                    Cours unCours = new Cours(courid, jourheure, unInstrument);
+
+
+                    Inscription unInscription = new Inscription(ad, unCours, solde);
+                    listInscription.Add(unInscription);
 
                 }
 
@@ -57,19 +57,19 @@ namespace Gestion_conservatoire.DAL
                 maConnexionsql.closeConnection();
 
             }
-            catch(Exception emp)
+            catch (Exception emp)
             {
 
                 throw (emp);
 
             }
             return listInscription;
-        
-        
+
+
         }
 
 
-      public void updateSolde(Inscription unInst)
+        public void updateSolde(Inscription unInst)
 
         {
             try
@@ -78,15 +78,20 @@ namespace Gestion_conservatoire.DAL
 
                 maConnexionsql.openConnection();
 
-                Ocom = maConnexionsql.reqExec("update inscription set paye = " + unInst.Solde + "where idAdherent = " + unInst.UnAdherent.Num + "and idCours =" + unInst.UnCours.Id);
-                    }
-            catch(Exception brout)
+                Ocom = maConnexionsql.reqExec("update inscription set paye = " + unInst.Solde + " where idAdherent = " + unInst.UnAdherent.Num + " and idCours = " + unInst.UnCours.Id);
+
+                MySqlDataReader reader2 = Ocom.ExecuteReader();
+
+                maConnexionsql.closeConnection();
+            }
+            catch (Exception brout)
             {
                 throw (brout);
             }
 
-            }
+        }
 
+    }
 
 
 
@@ -102,4 +107,4 @@ namespace Gestion_conservatoire.DAL
 
 
     }
-}
+

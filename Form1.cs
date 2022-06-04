@@ -41,7 +41,7 @@ namespace Gestion_conservatoire
 
             int i = cBox.SelectedIndex;
 
-            MessageBox.Show(" i : " + i);
+            //MessageBox.Show(" i : " + i);
 
             if (i != -1)
             {
@@ -157,6 +157,9 @@ namespace Gestion_conservatoire
                 Adherent ad = (Adherent)lstAd[j];
 
                 lstIns = monManager.chargemenInBD(ad);
+
+                rafraichirComboBox(j);
+
 
             }
 
