@@ -57,6 +57,12 @@ namespace Gestion_conservatoire
 
                 }
 
+
+              
+
+                feu.Visible = true;
+                feu.BackColor = Color.Red;
+
             }
         }
         private void rafraichirListBox(int index)
@@ -105,6 +111,7 @@ namespace Gestion_conservatoire
             lstAd = monManager.chargementAdBD();
 
             rafraichirComboBox(i);
+
         }
 
         private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -133,8 +140,6 @@ namespace Gestion_conservatoire
             }
             
 
-
-
         }
 
         private void btnCrediter_Click(object sender, EventArgs e)
@@ -146,7 +151,7 @@ namespace Gestion_conservatoire
             Inscription  uneIns= lstIns[i];
 
             //Recupere le solde et transforme en int 
-            uneIns.Crediter(Convert.ToInt32(textCrediter.Text));
+            uneIns.Crediter(Convert.ToInt32(textCrediter.Text));  
             
             ////J'apelle ma fonction
             monManager.updateSolde(uneIns);
@@ -173,6 +178,11 @@ namespace Gestion_conservatoire
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

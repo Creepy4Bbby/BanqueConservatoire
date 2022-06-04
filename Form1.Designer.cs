@@ -37,7 +37,7 @@ namespace Gestion_conservatoire
             this.supprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crediterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSupp = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.feu = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.textCrediter = new System.Windows.Forms.TextBox();
             this.btnCrediter = new System.Windows.Forms.Button();
@@ -121,12 +121,13 @@ namespace Gestion_conservatoire
             this.btnSupp.Visible = false;
             this.btnSupp.Click += new System.EventHandler(this.btnSupp_Click);
             // 
-            // panel1
+            // feu
             // 
-            this.panel1.Location = new System.Drawing.Point(739, 303);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 31);
-            this.panel1.TabIndex = 4;
+            this.feu.Location = new System.Drawing.Point(739, 303);
+            this.feu.Name = "feu";
+            this.feu.Size = new System.Drawing.Size(200, 31);
+            this.feu.TabIndex = 4;
+            this.feu.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
@@ -166,7 +167,7 @@ namespace Gestion_conservatoire
             this.Controls.Add(this.btnCrediter);
             this.Controls.Add(this.textCrediter);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.feu);
             this.Controls.Add(this.btnSupp);
             this.Controls.Add(this.cBox);
             this.Controls.Add(this.lBox);
@@ -192,7 +193,7 @@ namespace Gestion_conservatoire
         private System.Windows.Forms.ToolStripMenuItem modifierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem supprimerToolStripMenuItem;
         private System.Windows.Forms.Button btnSupp;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel feu;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textCrediter;
         private System.Windows.Forms.Button btnCrediter;

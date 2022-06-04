@@ -11,6 +11,7 @@ namespace Gestion_conservatoire.Modele
         private Adherent unAdherent;
         private Cours unCours;
         private int solde;
+        private int limiteSolde = 500;
         private string nomAd, prenomAd, dateCours, nomProf, prenomProf, nomInstrument;
         private int payer, nombrePlace;
 
@@ -33,9 +34,12 @@ namespace Gestion_conservatoire.Modele
         public Cours UnCours { get => unCours; }
         public int Solde { get => solde; set => solde = value; }
 
+        public int 
+
         public override string ToString()
         {
-            return ("Cours : " + unCours.UnIntrument.NomInstru + "  | Date : " + unCours.Date + "   |   Reste à payé : " + Solde + "/500");
+   
+            return ("Cours : " + unCours.UnIntrument.NomInstru + "  | Date : " + unCours.Date + "   |   Reste à payé : " + Solde + "/" + limiteSolde);
         }
 
     }
