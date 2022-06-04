@@ -28,7 +28,7 @@ namespace Gestion_conservatoire.Modele
 
         public override string ToString()
         {
-            return (unCours.UnIntrument.NomInstru + " | " + unCours.Date + " | " + Solde);
+            return ("Cours : " + unCours.UnIntrument.NomInstru + "  | Date : " + unCours.Date + "   |   Reste à payé : " + Solde + "/500");
         }
         
         public void Crediter (int montant)
