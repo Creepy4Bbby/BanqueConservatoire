@@ -60,8 +60,8 @@ namespace Gestion_conservatoire
 
               
 
-                feu.Visible = true;
-                feu.BackColor = Color.Red;
+                //feu.Visible = true;
+                //feu.BackColor = Color.Red;
 
             }
         }
@@ -94,7 +94,34 @@ namespace Gestion_conservatoire
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int i = lBox.SelectedIndex;
+            
+            if (i != -1)
+            {
+                Inscription inscription_adh_choisie = lstIns[i];
 
+               
+                int boolColor = inscription_adh_choisie.LimiteSolde;
+                if (boolColor == 0)
+                {
+                    feu.BackColor = Color.Red;
+                    feu.Visible = true;
+                    //lbl_payee.Text = "INSCRIPTION NON PAYEE";
+                    //lbl_payee.Visible = true;
+                }
+                else if (boolColor == 1)
+                {
+                    feu.BackColor = Color.Green;
+                    feu.Visible = true;
+                    //lbl_payee.Text = "INSCRIPTION PAYEE";
+                    //lbl_payee.Visible = true;
+                }
+            }
+            else
+            {
+                feu.Visible = false;
+                //lbl_payee.Visible = false;
+            }
         }
 
         private void modifierToolStripMenuItem_Click(object sender, EventArgs e)

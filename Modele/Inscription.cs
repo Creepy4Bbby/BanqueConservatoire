@@ -28,19 +28,28 @@ namespace Gestion_conservatoire.Modele
             solde = montant + solde;
         }
 
+        public void LimiteSolde(int m)
+        {
+            solde = m;
+            m = 500;
+        }
+
 
         //methode 
         public Adherent UnAdherent { get => unAdherent; }
         public Cours UnCours { get => unCours; }
         public int Solde { get => solde; set => solde = value; }
 
-        public int 
+     
 
-        public override string ToString()
+       public override string ToString()
         {
    
             return ("Cours : " + unCours.UnIntrument.NomInstru + "  | Date : " + unCours.Date + "   |   Reste à payé : " + Solde + "/" + limiteSolde);
         }
+
+
+
 
     }
 }
