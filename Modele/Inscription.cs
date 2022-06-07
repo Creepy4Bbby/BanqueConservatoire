@@ -20,6 +20,7 @@ namespace Gestion_conservatoire.Modele
             this.unAdherent = unAdherent;
             this.unCours = unCours;
             this.Solde = solde;
+        
         }
 
     
@@ -39,10 +40,11 @@ namespace Gestion_conservatoire.Modele
         public Adherent UnAdherent { get => unAdherent; }
         public Cours UnCours { get => unCours; }
         public int Solde { get => solde; set => solde = value; }
+       
 
-     
 
-       public override string ToString()
+
+        public override string ToString()
         {
    
             return ("Cours : " + unCours.UnIntrument.NomInstru + "  | Date : " + unCours.Date + "   |   Reste à payé : " + Solde + "/" + limiteSolde);
