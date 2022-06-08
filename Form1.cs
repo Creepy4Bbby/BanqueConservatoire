@@ -22,12 +22,15 @@ namespace Gestion_conservatoire
         private List<Adherent> lstAd = new List<Adherent>();
         Adherent Adherent_selected = new Adherent();
         private List<Inscription> lstIns = new List<Inscription>();
+
         public Gestion()
         {
             InitializeComponent();
             monManager = new Mgr();
         }
 
+
+        //formulaire il s'affiche
         private void Gestion_Load(object sender, EventArgs e)
         {
             lstAd = monManager.chargementAdBD();
@@ -100,20 +103,20 @@ namespace Gestion_conservatoire
             {
                 Inscription inscription_adh_choisie = lstIns[i];
 
-               
-                int boolColor = inscription_adh_choisie.LimiteSolde;
-                if (boolColor == 0)
-                {
-                    feu.BackColor = Color.Red;
-                    feu.Visible = true;
-                    //lbl_payee.Text = "INSCRIPTION NON PAYEE";
-                    //lbl_payee.Visible = true;
-                }
-                else if (boolColor == 1)
+
+                
+                if (inscription_adh_choisie.Inscription_Validee() )
                 {
                     feu.BackColor = Color.Green;
                     feu.Visible = true;
                     //lbl_payee.Text = "INSCRIPTION PAYEE";
+                    //lbl_payee.Visible = true;
+                }
+                else
+                {
+                    feu.BackColor = Color.Red;
+                    feu.Visible = true;
+                    //lbl_payee.Text = "INSCRIPTION NON PAYEE";
                     //lbl_payee.Visible = true;
                 }
             }

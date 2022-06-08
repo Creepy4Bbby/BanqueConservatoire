@@ -29,12 +29,17 @@ namespace Gestion_conservatoire.Modele
             solde = montant + solde;
         }
 
-        public void LimiteSolde(int m)
+      public Boolean Inscription_Validee()
         {
-            solde = m;
-            m = 500;
+            
+            if (limiteSolde > solde)
+            {
+                return false;
+            }
+            else { return true; }
+            
         }
-
+        
 
         //methode 
         public Adherent UnAdherent { get => unAdherent; }
