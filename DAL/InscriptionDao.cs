@@ -28,7 +28,7 @@ namespace Gestion_conservatoire.DAL
 
                 MySqlDataReader reader1 = Ocom.ExecuteReader();
 
-
+                //contien ( reader1) le tableau des resultat de la requete
                 while (reader1.Read())
                 {
 
@@ -92,17 +92,6 @@ namespace Gestion_conservatoire.DAL
         }
 
     }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

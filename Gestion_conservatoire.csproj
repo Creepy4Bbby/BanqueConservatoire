@@ -53,6 +53,7 @@
     <Compile Include="DAL\CoursDao.cs" />
     <Compile Include="DAL\Fabrique.cs" />
     <Compile Include="DAL\InscriptionDao.cs" />
+    <Compile Include="DAL\ProfesseurDao.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

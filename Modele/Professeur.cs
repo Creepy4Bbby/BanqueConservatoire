@@ -9,6 +9,8 @@ namespace Gestion_conservatoire.Modele
     class Professeur : Personne
     {
         double salaire;
+
+        //initiliser un objet professeur 
         public Professeur(int id, string nom, string prenom, string ad, string mail, string tel, double salaire) : base(id, nom, prenom, ad, mail, tel)
         {
             this.salaire = salaire;

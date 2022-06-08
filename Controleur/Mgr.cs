@@ -10,6 +10,7 @@ namespace Gestion_conservatoire.Controleur
 {
     class Mgr
     {
+        //appel a des focntion de la dal 
         AdherentDao a = new AdherentDao();
         InscriptionDao c = new InscriptionDao();
 
